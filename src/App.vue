@@ -1,5 +1,67 @@
 <template>
   <div>
+    <div id="seccion2" class="mt-5 pb-2 px-5 p-2 bgo">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide row"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleCaptions"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li
+            v-for="index in this.sizeDataImg"
+            :key="index"
+            data-target="#carouselExampleCaptions"
+            :data-slide-to="index"
+          ></li>
+        </ol>
+        <div class="row justify-content-center">
+          <div class="carousel-inner justify-content-center">
+            <img-carousel
+              :alter="dataImg[0].tags"
+              :img="dataImg[0].webformatURL"
+              :alter2="dataImg[1].tags"
+              :img2="dataImg[1].webformatURL"
+              active="active"
+            >
+            </img-carousel>
+            <img-carousel
+              v-for="index in this.sizeDataImg"
+              :key="index"
+              :alter="dataImg[index].tags"
+              :img="dataImg[index].webformatURL"
+              :alter2="dataImg[index + 1].tags"
+              :img2="dataImg[index + 1].webformatURL"
+              active=" "
+            >
+            </img-carousel>
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleCaptions"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleCaptions"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
     <div id="seccion3" class="pt-5">
       <div v-if="this.dataText.length >= 4" class="row justify-content-center">
         <books-api
@@ -29,29 +91,32 @@
 </template>
 
 <script>
-
-import TeamCard from './components/TeamCard';
+import TeamCard from "./components/TeamCard";
 import DataTeam from "./assets/team.json";
-import BooksApi from './components/BooksApi.vue';
+import BooksApi from "./components/BooksApi.vue";
+import ImgCarousel from "./components/ImgCarousel.vue";
 
 export default {
-  name: 'App',
+  name: "App",
 
   data() {
     return {
       dataText: [],
+      dataImg: [],
+      sizeDataImg: [],
       datateam: DataTeam,
     };
   },
+
   components: {
     BooksApi,
     TeamCard,
+    ImgCarousel,
   },
- 
- async beforeCreate() {
+
+  async beforeCreate() {
     const getNews = async () => {
-      
-       let urlText =
+      let urlText =
         "https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]&order=newest&num_items=4&lang=spanish";
       const resultText = await fetch(urlText, {
         method: "GET",
@@ -65,6 +130,7 @@ export default {
         console.log(this.dataText);
       }
     };
+
     const getImgHead = async () => {
       let urlText = "";
       const key = "19402912-b07e2ff6c1760abfdc58e2299";
@@ -78,18 +144,29 @@ export default {
       console.log(result);
       if (result.hits.length > 0) {
         this.dataImg = result.hits;
+        for (var j = 0; j < this.dataImg.length; j++) {
+          if (this.dataImg[j].webformatHeight < 420) {
+            this.dataImg.splice(j, 1);
+          }
+        }
 
-        console.log(this.dataImg);
-        for (var i = 1; i < this.dataImg.length - 3; i++)
+        for (var i = 1; i < this.dataImg.length - 3; i++){
+
           this.sizeDataImg.push(i);
+        }
       }
-      console.log(this.sizeDataImg);
+     
     };
 
     await getNews();
 
     await getImgHead();
   },
-}
+};
 </script>
+<style >
+.bgo{
+ background-color: rgba(163, 163, 163,0.7);
+}
+</style>
 
