@@ -1,12 +1,37 @@
 <template>
-  <div id="app">
+  <div>
+    <div id="seccion4" class="row justify-content-center pt-5">
+      <team-card
+        v-for="(inte, index) in this.datateam"
+        :key="index"
+        :name="inte.name"
+        :type="inte.type"
+        :desc="inte.desc"
+        :img="inte.img"
+        :boots="inte.boots"
+      >
+      </team-card>
+    </div>
   </div>
 </template>
 
 <script>
 
+import TeamCard from './components/TeamCard';
+import DataTeam from "./assets/team.json";
+
 export default {
   name: 'App',
+
+  data() {
+    return {
+      datateam: DataTeam,
+    };
+  },
+  components: {
+    
+    TeamCard,
+  },
  
  async beforeCreate() {
     const getNews = async () => {
