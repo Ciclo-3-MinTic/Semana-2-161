@@ -21,22 +21,23 @@
           ></li>
         </ol>
         <div class="row justify-content-center">
-          <div class="carousel-inner justify-content-center">
+          <div class="carousel-inner justify-content-center" v-if="dataImg.length">
             <img-carousel
               
               :img="dataImg[0].webformatURL"
               
-              :img2="dataImg[1].webformatURL"
+              :img2="dataImg[2].webformatURL"
               active="active"
             >
             </img-carousel>
             <img-carousel
+            
               v-for="index in this.sizeDataImg"
               :key="index"
               
               :img="dataImg[index].webformatURL"
               
-              :img2="dataImg[index+1].webformatURL"
+              :img2="dataImg[index+2].webformatURL"
               active=" "
             >
             </img-carousel>
