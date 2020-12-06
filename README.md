@@ -29,27 +29,27 @@ Solo requiere un navegador y descagar los archivos de nuestro repositorio. para 
 2. Code luego a Download Zip : 
 3. Extraer archivos ![paso-dos](https://i.ibb.co/m4zPZ8p/Screenshot-8.jpg)
 
-## Project setup
+#### Project setup
 ```
 npm install
 ```
-## Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
-## Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
 ```
-## Run your unit tests
+#### Run your unit tests
 ```
 npm run test:unit
 ```
-## Lints and fixes files
+#### Lints and fixes files
 ```
 npm run lint
 ```
-## Customize configuration
+#### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
  
 
