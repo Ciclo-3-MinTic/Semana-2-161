@@ -1,37 +1,38 @@
 [
     {
-        "name": "Andres Sneyder Castellanos Vivas",
-        "type": "Scrum Master - Developer team",
-        "desc": "Soy egresado del colegio departamental Alonso de Olalla. Tengo 20 años, estudio actualmente Ingeniería electronica en la Universidad Distrital Francisco Jose de Caldas. Me gusta ver series y mis deportes favoritos son la natacion y el baloncesto.                    ",
-        "img": "assets/Andres.jpeg",
-        "boots": "col-md-4 col-lg"
+        "codigo": 1,
+        "nombre": "Andres Sneyder Castellanos Vivas",
+        "rol": "Scrum Master - Developer team",
+        "descripcion": "Soy egresado del colegio departamental Alonso de Olalla. Tengo 20 años, estudio actualmente Ingeniería electronica en la Universidad Distrital Francisco Jose de Caldas. Me gusta ver series y mis deportes favoritos son la natacion y el baloncesto.                    ",
+        "image": "assets/Andres.jpeg"
+        
     },
     {
-        "name": "Cristian Mauricio Arias Mayorga",
-        "type": "Product Owner - Developer team",
-        "desc": "Tengo 25 años, estudie Ing. Sistemas en la universidad industrial de Santander (UIS) que no termine, me considero autodidacta, Ejerzo la profesión de programador en Android, pero deseo moverme al manejo de Unity y Unreal",
-        "img": "assets/Cristian.jpeg",
-        "boots": "col-md-4 col-lg"
+        "codigo": 2,
+        "nombre": "Cristian Mauricio Arias Mayorga",
+        "rol": "Product Owner - Developer team",
+        "descripcion": "Tengo 25 años, estudie Ing. Sistemas en la universidad industrial de Santander (UIS) que no termine, me considero autodidacta, Ejerzo la profesión de programador en Android, pero deseo moverme al manejo de Unity y Unreal",
+        "image": "assets/Cristian.jpeg"
     },
     {
-        "name": "Ketty Pineda Angel",
-        "type": "Developer team ",
-        "desc": "Soy Ingeniera Civil, Especialista en Gestión Empresarial de la Universidad Nacional de Colombia. Disfruto leer historia, el cine y cocinar.Adoro nadar y patinar. Mis mascotas me acompañan a correr todos los dias en la mañana.                                         ",
-        "img": "assets/Ketty.jpeg",
-        "boots": "col-md-4 col-lg"
+        "codigo": 3,
+        "nombre": "Ketty Pineda Angel",
+        "rol": "Developer team ",
+        "descripcion": "Soy Ingeniera Civil, Especialista en Gestión Empresarial de la Universidad Nacional de Colombia. Disfruto leer historia, el cine y cocinar.Adoro nadar y patinar. Mis mascotas me acompañan a correr todos los dias en la mañana.                                         ",
+        "image": "assets/Ketty.jpeg"
     },
     {
-        "name": "Esperanza Margarita Palacios Vargas",
-        "type": "Developer team",
-        "desc": "Tengo 25 años, soy Ing. Mecánica y Matemática. Trabajo como analista de datos y soy docente auxiliar de estadística para estudiantes de pregrado. Me gusta el Ajedréz, jugar con mi perro y montar en bicicleta.                                                          ",
-        "img": "assets/Esperanza.jpeg",
-        "boots": "col-md-6 col-lg"
+        "codigo": 4,
+        "nombre": "Esperanza Margarita Palacios Vargas",
+        "rol": "Developer team",
+        "descripcion": "Tengo 25 años, soy Ing. Mecánica y Matemática. Trabajo como analista de datos y soy docente auxiliar de estadística para estudiantes de pregrado. Me gusta el Ajedréz, jugar con mi perro y montar en bicicleta.                                                          ",
+        "image": "assets/Esperanza.jpeg"
     },
     {
-        "name": "Genaldo Rafael Rios Sierra",
-        "type": " ",
-        "desc": "                                                                                                                                                                                                                                                                          ",
-        "img": "assets/Rafael.jpg",
-        "boots": "col-md-6 col-lg"
+        "codigo": 5,
+        "nombre": "Genaldo Rafael Rios Sierra",
+        "rol": " ",
+        "descripcion": "                                                                                                                                                                                                                                                                          ",
+        "image": "assets/Rafael.jpg"
     }
 ]

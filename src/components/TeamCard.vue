@@ -1,20 +1,20 @@
 <template>
   <div
     class="card px-2 col-12 bg-transparent border-0 "
-    v-bind:class="Boots"
+    v-bind:class="clss"
   >
-    <img v-bind:src="img" class="img-thumbnail img-fluid foto" :alt="name" />
+    <img v-bind:src="member.image" class="img-thumbnail img-fluid " :alt="member.nombre " />
     <div class="p-0">
       <table class="table table-striped  mb-2 p-0 ">
         <tbody>
           <tr class="namet p-0 m-0  row align-items-center">
           <h5 class="text-center user-select-all h4 p-0 m-0">
-            {{ name }}
+            {{ member.nombre }}
           </h5>
           </tr>
           <tr class="typet  text-center">
             <h6 class="card-subtitle text-light  mt-1 ">
-              {{ type }}
+              {{ member.rol }}
             </h6>
           </tr>
           <tr class="desct ">
@@ -22,7 +22,7 @@
               <p
                 class="mb-0 text-justify  m-0 p-2 align align-bottom font-weight-bolder"
               >
-                {{ desc }}
+                {{ member.descripcion }}
               </p>
            
           </tr>
@@ -34,14 +34,22 @@
 
 <script>
 export default {
+  name:"TeamCard",
+
   props: {
-    name: String,
-    type: String,
-    desc: String,
-    img: String,
-    Boots: String,
+    member:{}
+
+    
+    
   },
-};
+  data(){
+    return {
+      clss: this.member.codigo>4?"col-md-4 col-lg":"col-md-6 col-lg"
+      
+    };
+  },
+ 
+}
 </script>
 
 <style scoped>

@@ -3,13 +3,11 @@
   :class="active">
     <img
       :src=img 
-      :alt=alter
       class="w-50 d-inline col align-self-start "
       
     />
     <img
       :src=img2 
-      :alt=alter2
       class="w-50  d-inline col align-self-start "
       
     />
@@ -19,10 +17,11 @@
 
 <script>
 export default {
+  name:"imgCarousel",
     props: {
-    alter: String,
+    
     img: String,
-    alter2: String,
+    
     img2: String,
     active: String,
     

@@ -23,9 +23,9 @@
         <div class="row justify-content-center">
           <div class="carousel-inner justify-content-center">
             <img-carousel
-              :alter="dataImg[0].tags"
+              
               :img="dataImg[0].webformatURL"
-              :alter2="dataImg[1].tags"
+              
               :img2="dataImg[1].webformatURL"
               active="active"
             >
@@ -33,10 +33,10 @@
             <img-carousel
               v-for="index in this.sizeDataImg"
               :key="index"
-              :alter="dataImg[index].tags"
+              
               :img="dataImg[index].webformatURL"
-              :alter2="dataImg[index + 1].tags"
-              :img2="dataImg[index + 1].webformatURL"
+              
+              :img2="dataImg[index+1].webformatURL"
               active=" "
             >
             </img-carousel>
@@ -82,11 +82,7 @@
       <team-card
         v-for="(inte, index) in this.datateam"
         :key="index"
-        :name="inte.name"
-        :type="inte.type"
-        :desc="inte.desc"
-        :img="inte.img"
-        :boots="inte.boots"
+        :member="inte"
       >
       </team-card>
     </div>
@@ -96,8 +92,8 @@
 <script>
 import TeamCard from "./components/TeamCard";
 import DataTeam from "./assets/team.json";
-import BooksApi from "./components/BooksApi.vue";
-import ImgCarousel from "./components/ImgCarousel.vue";
+import BooksApi from "./components/BooksApi";
+import ImgCarousel from "./components/ImgCarousel";
 
 export default {
   name: "App",
@@ -117,7 +113,7 @@ export default {
     ImgCarousel,
   },
 
-  async beforeCreate() {
+  async mounted() {
     const getNews = async () => {
       let urlText =
         "https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]&order=newest&num_items=4&lang=spanish";
@@ -139,21 +135,23 @@ export default {
       const key = "19402912-b07e2ff6c1760abfdc58e2299";
 
       urlText = `https://pixabay.com/api/?key=${key}&q=code+programing&orientation=horizontal&category=computer+backgrounds&image_type=photo&min_width=1200&min_height=300`;
-      const resultText = await fetch(urlText, {
+      const resultImages = await fetch(urlText, {
         method: "GET",
       });
 
-      const result = await resultText.json();
-      console.log(result);
-      if (result.hits.length > 0) {
-        this.dataImg = result.hits;
+      const resultImg = await resultImages.json();
+      
+      if (resultImg.hits.length > 0) {
+        this.dataImg = resultImg.hits;
         for (var j = 0; j < this.dataImg.length; j++) {
-          if (this.dataImg[j].webformatHeight < 420) {
+          if (this.dataImg[j].webformatHeight < 420 ) {
             this.dataImg.splice(j, 1);
           }
         }
+          console.log(this.dataImg)
 
-        for (var i = 1; i < this.dataImg.length - 3; i++){
+
+        for (var i = 1; i < this.dataImg.length - 4; i++){
 
           this.sizeDataImg.push(i);
         }
