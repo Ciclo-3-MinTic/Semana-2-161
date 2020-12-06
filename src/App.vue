@@ -1,5 +1,18 @@
 <template>
   <div>
+    <div id="seccion3" class="pt-5">
+      <div v-if="this.dataText.length >= 4" class="row justify-content-center">
+        <books-api
+          v-for="(data, index) in this.dataText"
+          :key="index"
+          :title="data.title"
+          :desc="data.content_short"
+          :img="data.thumbnail"
+          :link="data.url_download"
+        >
+        </books-api>
+      </div>
+    </div>
     <div id="seccion4" class="row justify-content-center pt-5">
       <team-card
         v-for="(inte, index) in this.datateam"
@@ -19,17 +32,19 @@
 
 import TeamCard from './components/TeamCard';
 import DataTeam from "./assets/team.json";
+import BooksApi from './components/BooksApi.vue';
 
 export default {
   name: 'App',
 
   data() {
     return {
+      dataText: [],
       datateam: DataTeam,
     };
   },
   components: {
-    
+    BooksApi,
     TeamCard,
   },
  
