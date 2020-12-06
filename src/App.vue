@@ -114,7 +114,7 @@ export default {
     ImgCarousel,
   },
 
-  async mounted() {
+  async beforeCreate() {
     const getNews = async () => {
       let urlText =
         "https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]&order=newest&num_items=4&lang=spanish";
