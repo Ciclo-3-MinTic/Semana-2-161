@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <div id="seccion2" class="mt-5 pb-2 px-5 p-2 bgo">
+  <div class="bgo">
+    
+    <div id="seccion2" class="mt-5 pb-2 px-4 p-2 ">
       <div
         id="carouselExampleCaptions"
         class="carousel slide row"
@@ -62,6 +63,8 @@
         </a>
       </div>
     </div>
+    
+    
     <div id="seccion3" class="pt-5">
       <div v-if="this.dataText.length >= 4" class="row justify-content-center">
         <books-api
@@ -75,7 +78,7 @@
         </books-api>
       </div>
     </div>
-    <div id="seccion4" class="row justify-content-center pt-5">
+    <div id="seccion4" class="row justify-content-center pt-5 px-3">
       <team-card
         v-for="(inte, index) in this.datateam"
         :key="index"

@@ -1,15 +1,33 @@
 <template>
   <div
-    class='card justify-content-center col-12 align-items-center justify-content-center d-flex'
-    v-bind:class=Boots
+    class="card px-2 col-12 bg-transparent border-0 "
+    v-bind:class="Boots"
   >
-    <img  v-bind:src=img  class="img-fluid" alt="..."/>
-    <div class="card-body">
-      <h5 class="card-title text-center user-select-all">{{name}}</h5>
-      <h5 class="card-subtitle text-muted text-center">{{type}}</h5>
-      <p class="card-text text-justify">
-        {{desc}}
-      </p>
+    <img v-bind:src="img" class="img-thumbnail img-fluid foto" :alt="name" />
+    <div class="p-0">
+      <table class="table table-striped  mb-2 p-0 ">
+        <tbody>
+          <tr class="namet p-0 m-0  row align-items-center">
+          <h5 class="text-center user-select-all h4 p-0 m-0">
+            {{ name }}
+          </h5>
+          </tr>
+          <tr class="typet  text-center">
+            <h6 class="card-subtitle text-light  mt-1 ">
+              {{ type }}
+            </h6>
+          </tr>
+          <tr class="desct ">
+           
+              <p
+                class="mb-0 text-justify  m-0 p-2 align align-bottom font-weight-bolder"
+              >
+                {{ desc }}
+              </p>
+           
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -21,9 +39,21 @@ export default {
     type: String,
     desc: String,
     img: String,
-    Boots: String
+    Boots: String,
   },
 };
 </script>
+
+<style scoped>
+.namet {
+  height: 15vh;
+}
+.typet {
+  height: 8vh;
+}
+.desct {
+  height: max-content;
+}
+</style>
 
 
