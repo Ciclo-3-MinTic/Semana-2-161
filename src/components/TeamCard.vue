@@ -7,16 +7,20 @@
     <div class="p-0">
       <table class="table table-striped  mb-2 p-0 ">
         <tbody>
-          <tr class="namet p-0 m-0  row align-items-center">
-          <h5 class="text-center user-select-all h4 p-0 m-0">
-            {{ member.nombre }}
-          </h5>
-          </tr>
-          <tr class="typet  text-center">
-            <h6 class="card-subtitle text-light  mt-1 ">
-              {{ member.rol }}
+          <tr class="typet  row align-items-center px-4 py-2">
+          
+            <h6 class=" text-light  mt-1 text-center col-11">
+               {{ member.codigo }}. {{ member.rol }}
             </h6>
           </tr>
+          <tr class="namet p-0 m-0  row align-items-center text-center">
+          
+          <h5 class="text-center  h4 p-0 m-0">
+            {{ member.nombre }}
+          </h5>
+       
+          </tr>
+          
           <tr class="desct ">
            
               <p
@@ -54,10 +58,10 @@ export default {
 
 <style scoped>
 .namet {
-  height: 15vh;
+  height: 9vh;
 }
 .typet {
-  height: 8vh;
+  height: 9vh;
 }
 .desct {
   height: max-content;

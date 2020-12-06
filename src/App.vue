@@ -21,22 +21,23 @@
           ></li>
         </ol>
         <div class="row justify-content-center">
-          <div class="carousel-inner justify-content-center">
+          <div class="carousel-inner justify-content-center" v-if="dataImg.length">
             <img-carousel
               
               :img="dataImg[0].webformatURL"
               
-              :img2="dataImg[1].webformatURL"
+              :img2="dataImg[2].webformatURL"
               active="active"
             >
             </img-carousel>
             <img-carousel
+            
               v-for="index in this.sizeDataImg"
               :key="index"
               
               :img="dataImg[index].webformatURL"
               
-              :img2="dataImg[index+1].webformatURL"
+              :img2="dataImg[index+2].webformatURL"
               active=" "
             >
             </img-carousel>
@@ -113,7 +114,7 @@ export default {
     ImgCarousel,
   },
 
-  async mounted() {
+  async beforeCreate() {
     const getNews = async () => {
       let urlText =
         "https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]&order=newest&num_items=4&lang=spanish";
