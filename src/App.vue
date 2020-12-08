@@ -67,18 +67,12 @@
     
     
     <div id="seccion3" class="pt-5">
-      <div v-if="this.dataText.length >= 4" class="row justify-content-center">
-        <books-api
-          v-for="(data, index) in this.dataText"
-          :key="index"
-          :title="data.title"
-          :desc="data.content_short"
-          :img="data.thumbnail"
-          :link="data.url_download"
-        >
-        </books-api>
-      </div>
+    
+        <books-api></books-api>
+    
     </div>
+
+
     <div id="seccion4" class="row justify-content-center pt-5 px-3">
       <team-card
         v-for="(inte, index) in this.datateam"
@@ -101,7 +95,7 @@ export default {
 
   data() {
     return {
-      dataText: [],
+      
       dataImg: [],
       sizeDataImg: [],
       datateam: DataTeam,
@@ -115,21 +109,7 @@ export default {
   },
 
   async beforeCreate() {
-    const getNews = async () => {
-      let urlText =
-        "https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]&order=newest&num_items=4&lang=spanish";
-      const resultText = await fetch(urlText, {
-        method: "GET",
-      });
-
-      const result = await resultText.json();
-
-      if (result.length >= 4) {
-        this.dataText = result;
-
-        console.log(this.dataText);
-      }
-    };
+    
 
     const getImgHead = async () => {
       let urlText = "";
@@ -160,7 +140,6 @@ export default {
      
     };
 
-    await getNews();
 
     await getImgHead();
   },
