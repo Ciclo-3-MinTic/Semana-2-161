@@ -1,5 +1,5 @@
 <template>
-  <div class="bgo">
+  <div class="bgo" id="app">
     
     <div id="seccion2" class="mt-5 pb-2 px-4 p-2 ">
       <div
