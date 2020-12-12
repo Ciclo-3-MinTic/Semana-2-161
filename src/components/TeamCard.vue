@@ -38,14 +38,9 @@
 
 <script>
 export default {
-  name:"TeamCard",
-
-  props: {
-    member:{}
-
-    
-    
-  },
+     name: "TeamCard",
+     props: ['member'],
+  
   data(){
     return {
       clss: this.member.codigo>4?"col-md-4 col-lg":"col-md-6 col-lg"
@@ -58,7 +53,7 @@ export default {
 
 <style scoped>
 .namet {
-  height: 9vh;
+  height: 10vh;
 }
 .typet {
   height: 9vh;
