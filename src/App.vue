@@ -1,5 +1,5 @@
 <template>
-  <div class="bgo" id="app">
+  <div id="app" class="bgo" >
     
     <div id="seccion2" class="mt-5 pb-2 px-4 p-2 ">
       <div
@@ -91,7 +91,7 @@ import BooksApi from "./components/BooksApi";
 import ImgCarousel from "./components/ImgCarousel";
 
 export default {
-  name: "App",
+  name: 'App',
 
   data() {
     return {
@@ -129,7 +129,7 @@ export default {
             this.dataImg.splice(j, 1);
           }
         }
-          console.log(this.dataImg)
+         /*  console.log(this.dataImg) */
 
 
         for (var i = 1; i < this.dataImg.length - 4; i++){

@@ -7,7 +7,7 @@
           >
     <div class="row justify-content-center">
       <div class="col-4 align-items-center justify-content-center d-flex ">
-        <img :src="data.thumbnail" class="img-fluid " :alt="data.title" />
+        <img :src="data.thumbnail" class="img-fluid " :alt="data.title" >
       </div>
       <div class="col-8 ">
         <div class="card-body pl-0 ">
@@ -49,7 +49,7 @@ export default {
       if (result.length >= 4) {
         this.dataText = result;
 
-        console.log(this.dataText);
+      /*   console.log(this.dataText); */
       }
     };
 
